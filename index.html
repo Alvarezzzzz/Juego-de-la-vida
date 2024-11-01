@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8" />
+    <title>Triangulo de Sierpinski</title><link rel="stylesheet" href="./css/styles.css">
+    </style>   
+</head>
+<body>
+	<h2>Triangulo de <span style="color:#bd0707">Sierpinski</span></h2>
+	<div class="main"> 
+		<canvas id="sierpinskiCanvas" width="600" height="470" style="border:1px solid #d3d3d3;">
+		Your browser does not support the HTML5 canvas tag.</canvas>
+
+		<div class="optionsMenu">
+			<ul>
+				<li><input type="button" value="&#9654; Iniciar animación" id="startAnimation" onclick="startAnimation()"></li>
+				<li><input type="button" value="&#9632; Detener animación" id="stopAnimation" onclick="stopAnimation()"></li>
+				<li><b>Color: </b>
+					<input type="color" id="myColor" value="#ffff00" oninput="changeColor()">
+				</li>
+			</ul>
+			
+			<p class="rango">	<b>Valor = <span id="rangeText"></span></b> <br>
+				<input type="radio" id="opcion1" name="opcion" value="opcion1">
+   				<label for="opcion1">Tiempo</label><br>
+   				<input type="radio" id="opcion2" name="opcion" value="opcion2">
+   				<label for="opcion2">Recursividad</label>
+				<input type="range" min="1" max="7" value="4" id="myRange" oninput="updateConfiguration()">
+			</p>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/sierpinski.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>
