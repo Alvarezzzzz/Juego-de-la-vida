@@ -1,6 +1,4 @@
-/**
- *	Credits to Jörn Hameister (https://www.hameister.org/HTML5_Sierpinski.html)
- */
+
 var width = 600;
 var height = 600;
 var size = 500;

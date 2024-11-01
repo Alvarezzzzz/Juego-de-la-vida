@@ -1,13 +1,8 @@
-/**
-***	Author : Oussama Ben Khiroun
-***	Contact : https://oussamabenkhiroun.com/
-***	Version 1.0
-**/
-
 var canvas = document.getElementById("sierpinskiCanvas");
 var ctx = canvas.getContext("2d");	
 var fillColor = document.getElementById("myColor").value;
 var depth;
+var rescursividad = document.getElementById("opcion2");
 
 updateConfiguration();
 
@@ -48,17 +43,29 @@ var input2 = document.getElementById("opcion2")
 var inputRange = document.getElementById("myRange")
 
 function startAnimation(){
+	iteration = 1;
+	clearSierpinski();
+	drawSierpinski(0);
 	if (opcion1.checked) {
-        iteration = 1;
-		clearSierpinski();
-		drawSierpinski(0);
 		var value = Number(inputRange.value) * 1000
 		myTimer = setInterval(showAnimation, value);
     }
+	else if (rescursividad.checked) {
+		myTimer = setInterval(showAnimation2, 1000);
+	}
 	
 }
 
 function showAnimation(){
+	drawSierpinski(iteration%8);
+	iteration++;
+}
+
+function showAnimation2(){
+	if (iteration == inputRange.value) {
+		clearInterval(myTimer);
+		console.log(iteration, inputRange.value)
+	}
 	drawSierpinski(iteration%8);
 	iteration++;
 }
