@@ -43,12 +43,19 @@ function clearSierpinski(){
 
 var iteration;
 var myTimer;
+var input1 = document.getElementById("opcion1")
+var input2 = document.getElementById("opcion2")
+var inputRange = document.getElementById("myRange")
 
 function startAnimation(){
-	iteration = 1;
-	clearSierpinski();
-	drawSierpinski(0);
-	myTimer = setInterval(showAnimation, 3000);
+	if (opcion1.checked) {
+        iteration = 1;
+		clearSierpinski();
+		drawSierpinski(0);
+		var value = Number(inputRange.value) * 1000
+		myTimer = setInterval(showAnimation, value);
+    }
+	
 }
 
 function showAnimation(){
